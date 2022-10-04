@@ -1,6 +1,6 @@
 from flask import Flask, redirect, url_for, render_template
 
-from proscan import PriorStage
+from prior_stage.proscan import PriorStage
 
 app = Flask(__name__)
 
@@ -28,4 +28,4 @@ def stage_test():
     return render_template('running_test_page.html')
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+    app.run(host='0.0.0.0')

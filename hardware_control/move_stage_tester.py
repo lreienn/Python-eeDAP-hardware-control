@@ -3,6 +3,7 @@
 
 from prior_stage.proscan import PriorStage
 from os import sys
+from serial import SerialException
 
 print("running move stage tester")
 
@@ -10,8 +11,8 @@ print("running move stage tester")
 # input the appropriate COM port
 try:
     p = PriorStage("COM4")
-except:
-    print('Not connected')
+except SerialException:
+    print('Not connected. Press any key to exit.')
     sys.exit(0)
 # testing: move to provided coordinates
 # coordinate provided in JSON format
