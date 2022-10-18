@@ -15,7 +15,7 @@ def stage_test():
 
     # initialize communication with Prior ProScan III
     # input the appropriate COM port
-    p = PriorStage("COM4")
+    p = PriorStage("/dev/ttyACM0")
 
     # testing: move to provided coordinates
     # coordinate provided in JSON format
@@ -28,4 +28,4 @@ def stage_test():
     return render_template('running_test_page.html')
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', port='5000')

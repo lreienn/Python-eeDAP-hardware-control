@@ -10,9 +10,9 @@ print("running move stage tester")
 # initialize communication with Prior ProScan III
 # input the appropriate COM port
 try:
-    p = PriorStage("COM4")
-except SerialException:
-    print('Not connected. Press any key to exit.')
+    p = PriorStage('/dev/ttyACM0')
+except SerialException as e:
+    print(e)
     sys.exit(0)
 # testing: move to provided coordinates
 # coordinate provided in JSON format
