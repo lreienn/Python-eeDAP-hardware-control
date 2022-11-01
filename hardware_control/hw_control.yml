@@ -7,10 +7,10 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "5000:5000"
+      - "80:5000"
     deploy:
       placement:
         constraints:
-          - node.hostname==docker-desktop
-    devices:
-      - "/dev/ttyACM0:/dev/ttyACM0"
+          - node.role==manager
+    # devices:
+    #   - "/dev/ttyACM0:/dev/ttyACM0"
